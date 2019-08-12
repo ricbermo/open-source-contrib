@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">RN60Test</string>
+    <string name="reactNativeCodePush_androidDeploymentKey">asdasdasdasdas</string>
+</resources>
