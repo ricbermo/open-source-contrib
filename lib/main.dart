@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'demo_getx.dart';
 import 'demo_riverpod.dart';
 
 void main() {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: DemoRiverpod(),
+      home: DemoGet(),
     );
   }
 }

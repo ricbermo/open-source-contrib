@@ -1,8 +1,8 @@
 import 'package:demo/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/all.dart';
-
 import 'comment_model.dart';
+import 'comments_list.dart';
 
 class DemoRiverpod extends StatelessWidget {
   @override
@@ -43,22 +43,7 @@ class RiverpodList extends ConsumerWidget {
         data: (comments) {
           return RefreshIndicator(
             onRefresh: () => context.refresh(commentsFutureProvider),
-            child: ListView.separated(
-              separatorBuilder: (c, i) => const Divider(),
-              itemCount: comments?.length,
-              itemBuilder: (ctx, index) {
-                var comment = comments[index];
-                return Container(
-                  padding: EdgeInsets.symmetric(vertical: 7.0, horizontal: 10),
-                  child: Text(
-                    comment.body,
-                    style: TextStyle(
-                      fontSize: 20,
-                    ),
-                  ),
-                );
-              },
-            ),
+            child: CommentsList(comments: comments),
           );
         },
       ),
